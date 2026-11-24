@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>App Farmacia - Consulta de Bases de Datos</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <main class="container">
+    <header class="header">
+      <h1>App Farmacia</h1>
+      <p>Verificación de conexión en modo <strong>Solo Consulta</strong> (configurado desde <code>.env</code>).</p>
+    </header>
+
+    <!-- Tarjeta de Estado de Conexión -->
+    <section class="card">
+      <div class="card-header">
+        <h2>Estado de la Conexión</h2>
+        <button type="button" id="btn-recargar">Volver a Consultar</button>
+      </div>
+      <div id="estado-conexion" class="badge">Consultando servidor...</div>
+      <p id="info-servidor" class="info-servidor">Verificando credenciales de .env...</p>
+    </section>
+
+    <!-- Tarjeta con la Lista de Bases de Datos -->
+    <section class="card">
+      <h2>Bases de Datos Encontradas (<span id="contador-bd">0</span>)</h2>
+      <ul id="lista-databases" class="db-list">
+        <li class="db-item">Cargando lista de bases de datos...</li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

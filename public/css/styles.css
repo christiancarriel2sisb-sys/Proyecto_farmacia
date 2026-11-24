@@ -1,0 +1,110 @@
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background-color: #f1f5f9;
+  color: #1e293b;
+  margin: 0;
+  padding: 2rem 1rem;
+}
+
+.container {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.header h1 {
+  margin: 0 0 0.3rem 0;
+}
+
+.header p {
+  margin: 0;
+  color: #475569;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  margin-top: 1.5rem;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.card h2 {
+  margin: 0;
+  font-size: 1.15rem;
+}
+
+button {
+  background-color: #0284c7;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0369a1;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.5rem 0.9rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  background: #e2e8f0;
+  color: #334155;
+}
+
+.badge.exito {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.badge.error {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.info-servidor {
+  margin: 0.75rem 0 0 0;
+  font-size: 0.9rem;
+  color: #475569;
+}
+
+.db-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.75rem;
+}
+
+.db-item {
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-left: 4px solid #0284c7;
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.db-item.error-item {
+  grid-column: 1 / -1;
+  border-left-color: #ef4444;
+  color: #991b1b;
+  background: #fef2f2;
+}
