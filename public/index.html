@@ -3,32 +3,51 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>App Farmacia - Consulta de Bases de Datos</title>
+  <title>App Farmacia - Buscador de Consultas</title>
   <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
   <main class="container">
+    <!-- Encabezado y Estado de Conexión -->
     <header class="header">
-      <h1>App Farmacia</h1>
-      <p>Verificación de conexión en modo <strong>Solo Consulta</strong> (configurado desde <code>.env</code>).</p>
+      <div>
+        <h1>App Farmacia</h1>
+        <p>Panel de búsqueda y visualización de consultas a la base de datos.</p>
+      </div>
+      <div class="status-box">
+        <span id="estado-conexion" class="badge">Verificando conexión...</span>
+        <span id="info-servidor" class="info-servidor"></span>
+      </div>
     </header>
 
-    <!-- Tarjeta de Estado de Conexión -->
-    <section class="card">
-      <div class="card-header">
-        <h2>Estado de la Conexión</h2>
-        <button type="button" id="btn-recargar">Volver a Consultar</button>
-      </div>
-      <div id="estado-conexion" class="badge">Consultando servidor...</div>
-      <p id="info-servidor" class="info-servidor">Verificando credenciales de .env...</p>
+    <!-- 1. Barra de Búsqueda -->
+    <section class="card search-card">
+      <form id="form-busqueda" class="search-form">
+        <input
+          type="text"
+          id="input-busqueda"
+          class="search-input"
+          placeholder="Escribe aquí para buscar en la base de datos..."
+          autocomplete="off"
+        >
+        <button type="submit" id="btn-buscar" class="btn-primary">Buscar</button>
+        <button type="button" id="btn-limpiar" class="btn-secondary">Limpiar</button>
+      </form>
     </section>
 
-    <!-- Tarjeta con la Lista de Bases de Datos -->
-    <section class="card">
-      <h2>Bases de Datos Encontradas (<span id="contador-bd">0</span>)</h2>
-      <ul id="lista-databases" class="db-list">
-        <li class="db-item">Cargando lista de bases de datos...</li>
-      </ul>
+    <!-- 2. Cuadro de Visualización de Datos -->
+    <section class="card results-card">
+      <div class="card-header">
+        <h2>Datos de la Consulta</h2>
+        <span id="contador-resultados" class="results-count">Sin consulta activa</span>
+      </div>
+
+      <!-- Aquí se dibujan dinámicamente las tablas o datos que devuelva la consulta -->
+      <div id="cuadro-resultados" class="results-box">
+        <div class="empty-state">
+          Ingresa un término en la barra de búsqueda y presiona <strong>Buscar</strong> para visualizar los datos.
+        </div>
+      </div>
     </section>
   </main>
 

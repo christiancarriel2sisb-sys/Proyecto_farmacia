@@ -39,6 +39,8 @@ fastify.get('/api/databases', async (request, reply) => {
   }
 });
 
+
+
 // Función que arranca el servidor web y realiza la consulta inicial en consola
 const start = async () => {
   try {
